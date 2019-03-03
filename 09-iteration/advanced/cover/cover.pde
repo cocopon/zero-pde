@@ -18,7 +18,7 @@ void mousePressed() {
   }
 
   int i = 0;
-  while (i < 20) {
+  while (i < 100) {
     strokeWeight(i);
 
     ellipse(
