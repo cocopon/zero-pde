@@ -23,14 +23,18 @@ void mousePressed() {
   ox = mouseX;
   oy = mouseY;
 
-  // for文で1000回繰り返し
-  for (int i = 0; i < 1000; i++) {
+  // while文で1000回繰り返し
+  int i = 0;
+  while (i < 1000) {
     // 変数 x, y の位置に円を描く
     ellipse(ox, oy, 4, 4);
 
     // ランダムで位置を移動させる
     ox += random(-4, 4);
     oy += random(-4, 4);
+
+    // ループ変数を 1 増やす
+    i = i + 1;
   }
 }
 
