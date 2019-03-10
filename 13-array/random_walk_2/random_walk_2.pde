@@ -26,12 +26,12 @@ void draw() {
   background(255, 255, 255);
 
   // エージェント1の位置をランダムにずらす
-  ballx1 = ballx1 + random(-10, 10);
-  bally1 = bally1 + random(-10, 10);
+  ballx1 += random(-10, 10);
+  bally1 += random(-10, 10);
 
   // エージェント2の位置もランダムにずらす
-  ballx2 = ballx2 + random(-10, 10);
-  bally2 = bally2 + random(-10, 10);
+  ballx2 += random(-10, 10);
+  bally2 += random(-10, 10);
 
   // エージェント1を描く
   ellipse(ballx1, bally1, 30, 30);

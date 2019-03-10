@@ -1,4 +1,4 @@
-// ランダムに歩き回るエージェントが2体
+// ランダムに歩き回るエージェントが複数体
 // （配列・for文を使って効率化）
 
 // エージェントの位置を覚えておくための変数
@@ -26,14 +26,12 @@ void draw() {
 
   for (int i = 0; i < 1000; i++) {
     // i 番目のエージェントの位置をランダムにずらす
-    ballx[i] = ballx[i] + random(-10, 10);
-    bally[i] = bally[i] + random(-10, 10);
+    ballx[i] += random(-10, 10);
+    bally[i] += random(-10, 10);
   }
 
   for (int i = 0; i < 1000; i++) {
     // i 番目のエージェントを描く
     ellipse(ballx[i], bally[i], 30, 30);
   }
-
-  saveFrame("out/###.png");
 }
