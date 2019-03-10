@@ -1,6 +1,5 @@
 // マウスに反応するグリッド
 
-DummyCursor c = new DummyCursor();
 void setup() {
   size(600, 600);
   noStroke();
@@ -23,6 +22,4 @@ void draw() {
       ellipse(x, y, sz, sz);
     }
   }
-  c.draw();
-  saveFrame("out/###.png");
 }

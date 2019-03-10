@@ -18,6 +18,4 @@ void draw() {
 
   ellipse(300, 250, 50, 50);
   ellipse(300, 350, 50, 50);
-  
-  save(String.format("%03d.png", second()));
 }
