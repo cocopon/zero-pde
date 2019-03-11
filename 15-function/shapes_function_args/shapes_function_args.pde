@@ -1,8 +1,10 @@
 // 関数理解用
-// 関数で塗り色を決める
+// 関数で塗り色を決める（引数つき）
+// 右下にいくほど暗くしている
 
-// いい感じに塗り色を設定する関数
-void fillNicely() {
+// いい感じに塗り色を設定する関数（明るさ指定オプションつき）
+// 設定したい色の明るさを引数 br (0 ~ 255) として指定できる
+void fillNicely(float br) {
   // かぼちゃのような色を生成する
 
   colorMode(HSB);
@@ -13,8 +15,7 @@ void fillNicely() {
     -1, +1,
     0, 255
   );
-  float b = s;
-  fill(h, s, b);
+  fill(h, s, br);
 }
 
 void setup() {
@@ -26,7 +27,7 @@ void setup() {
   rectMode(CENTER);
 
   // 上段左の図形
-  fillNicely();
+  fillNicely(200);
   ellipse(
     width / 4,
     height / 4,
@@ -34,7 +35,7 @@ void setup() {
   );
 
   // 上段中央の図形
-  fillNicely();
+  fillNicely(180);
   rect(
     width / 2,
     height / 4,
@@ -42,7 +43,7 @@ void setup() {
   );
 
   // 上段右上の図形
-  fillNicely();
+  fillNicely(160);
   arc(
     width * 3 / 4 - 100 / 2,
     height / 4 + 100 / 2,
@@ -53,7 +54,7 @@ void setup() {
   );
 
   // 中段左の図形
-  fillNicely();
+  fillNicely(140);
   rect(
     width / 4,
     height / 2,
@@ -62,7 +63,7 @@ void setup() {
   );
 
   // 中段右の図形
-  fillNicely();
+  fillNicely(120);
   ellipse(
     width * 3 / 4,
     height / 2,
@@ -70,7 +71,7 @@ void setup() {
   );
 
   // 下段左の図形
-  fillNicely();
+  fillNicely(100);
   arc(
     width / 4 + 100 / 2,
     height * 3 / 4 + 100 / 2,
@@ -80,7 +81,7 @@ void setup() {
   );
 
   // 下段中央の図形
-  fillNicely();
+  fillNicely(80);
   ellipse(
     width / 2,
     height * 3 / 4,
@@ -88,7 +89,7 @@ void setup() {
   );
 
   // 下段右の図形
-  fillNicely();
+  fillNicely(60);
   rect(
     width * 3 / 4,
     height * 3 / 4,
