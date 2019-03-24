@@ -27,8 +27,8 @@ void draw() {
   y += vy;
 
   // 速度をランダムに変化させる
-  vx += random(-0.1, +0.1);
-  vy += random(-0.1, +0.1);
+  vx += random(-0.2, +0.2);
+  vy += random(-0.2, +0.2);
 
   // エージェントを描く
   background(255);
