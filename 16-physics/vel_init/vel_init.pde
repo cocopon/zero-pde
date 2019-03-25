@@ -15,8 +15,8 @@ void setup() {
 }
 
 void draw() {
-  // 毎回右に3pxずつ移動する
-  x += 3;
+  // 毎回右に5pxずつ移動する
+  x += 5;
 
   // 右端まで達したら左端に戻す
   if (x > width) {
@@ -26,4 +26,6 @@ void draw() {
   // エージェントを描く
   background(255);
   ellipse(x, y, 60, 60);
+
+  saveFrame("out/###.png");
 }

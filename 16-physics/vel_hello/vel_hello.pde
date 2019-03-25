@@ -17,7 +17,7 @@ void setup() {
   y = height / 2;
 
   // 初速
-  vx = 3;
+  vx = 5;
   vy = 0;
 }
 
