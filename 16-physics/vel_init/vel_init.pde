@@ -26,6 +26,4 @@ void draw() {
   // エージェントを描く
   background(255);
   ellipse(x, y, 60, 60);
-
-  saveFrame("out/###.png");
 }
