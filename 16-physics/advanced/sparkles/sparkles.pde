@@ -37,6 +37,8 @@ class Attractor {
   float strength = random(1);
   float range = random(0.1, 0.8);
   float df = random(0.01, 0.1);
+  float t = 1;
+  float dt = random(-1, +1) * 0.001;
 
   void update(Particle[] ps) {
     for (Particle p : ps) {
@@ -46,8 +48,10 @@ class Attractor {
       );
       float d = n.mag();
       n.normalize();
+      
+      this.t += this.dt;
 
-      float po = pow(this.range, d * this.df) * this.strength; 
+      float po = pow(this.range, d * this.df) * this.strength * this.t; 
 
       p.vel.x += n.x * po;
       p.vel.y += n.y * po;
