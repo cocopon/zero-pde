@@ -1,4 +1,5 @@
-# ZERO-PDE
+# ![ZERO-PDE](https://user-images.githubusercontent.com/602961/55703362-601efc80-5a14-11e9-9870-f6284809775c.jpg)
+
 このスケッチ群は、「[ZERO-PDE: Processingでゼロから学ぶプログラミング・ビジュアルアート](https://cocopon.me/zero-pde/)」のために用意したサンプルコードです。
 詳細については https://cocopon.me/zero-pde/ を参照してください。
 
