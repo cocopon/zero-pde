@@ -1,6 +1,6 @@
 # ![ZERO-PDE](https://user-images.githubusercontent.com/602961/55703362-601efc80-5a14-11e9-9870-f6284809775c.jpg)
 
-このスケッチ群は、「[ZERO-PDE: Processingでゼロから学ぶプログラミング・ビジュアルアート](https://cocopon.me/zero-pde/)」のために用意したサンプルコードです。
+「[ZERO-PDE: Processingでゼロから学ぶプログラミング・ビジュアルアート](https://cocopon.me/zero-pde/)」のために用意したサンプルコード集です。
 詳細については https://cocopon.me/zero-pde/ を参照してください。
 
 ![iteration](https://user-images.githubusercontent.com/602961/55420821-e077d480-55b2-11e9-985c-f8b08b54942f.png)
