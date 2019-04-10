@@ -28,8 +28,6 @@ void mousePressed() {
     // 軌跡の線を引く
     line(px, py, x, y);
   }
-
-  saveFrame("out/###.png");
 }
 
 void draw() {
