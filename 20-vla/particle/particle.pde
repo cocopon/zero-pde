@@ -1,4 +1,4 @@
-// 可変長配列でエージェント100体（寿命つき）
+// 可変長配列で無限増殖エージェント（寿命つき）＝パーティクル
 
 // エージェントの位置を覚えておくための配列
 FloatList x;
@@ -20,19 +20,6 @@ void setup() {
   vx = new FloatList();
   vy = new FloatList();
   life = new FloatList();
-
-  // エージェントの初期位置を設定
-  for (int i = 0; i < 100; i++) {
-    x.append(width / 2);
-    y.append(height / 2);
-
-    // 速度もランダムに設定
-    vx.append(random(-5, 5));
-    vy.append(random(-5, 5));
-
-    // 寿命を設定
-    life.append(1);
-  }
 }
 
 void draw() {
