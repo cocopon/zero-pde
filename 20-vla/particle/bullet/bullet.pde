@@ -19,7 +19,7 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  background(0);
 
   // 経過時間から発射角度を計算
   float angle = frameCount * 0.1;
@@ -47,7 +47,7 @@ void draw() {
     x.add(i, vx.get(i));
     y.add(i, vy.get(i));
 
-    fill(0);
+    fill(255, 0, 255);
 
     // i番目のエージェントを描く
     ellipse(x.get(i), y.get(i), 4, 4);

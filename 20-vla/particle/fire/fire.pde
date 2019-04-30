@@ -1,4 +1,4 @@
-// 可変長配列でパーティクル（画像で粒子を表現）
+// 可変長配列でパーティクル（色や動きを調整して炎を表現）
 
 // エージェントの位置を覚えておくための配列
 FloatList x;
@@ -13,7 +13,12 @@ PImage img;
 
 void setup() {
   size(600, 600);
+  blendMode(ADD);
+  colorMode(HSB, 360, 100, 100);
   noStroke();
+  
+  // 画像を描くときの基準位置を中央に
+  imageMode(CENTER);
 
   img = loadImage("bokeh.png");
 
@@ -26,14 +31,14 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  background(0);
 
   // 新たなエージェントを追加
   x.append(mouseX);
   y.append(mouseY);
   // 速度もランダムに設定
-  vx.append(random(-5, 5));
-  vy.append(random(-5, 5));
+  vx.append(random(-2, 2));
+  vy.append(random(-5, 0));
   // 寿命を設定
   life.append(1);
 
@@ -41,7 +46,7 @@ void draw() {
   // ＝すべてのエージェントについて処理する
   for (int i = 0; i < x.size(); i++) {
     // i番目のエージェントに重力を加える
-    vy.add(i, 0.2);
+    vy.add(i, -0.1);
 
     // i番目のエージェントの位置をずらす
     x.add(i, vx.get(i));
@@ -50,15 +55,15 @@ void draw() {
     // i番目のエージェントの寿命を減らす
     life.sub(i, 0.05);
 
-    // 寿命を塗りの不透明度に反映する
-    // 寿命 life.get(i) が 1 ~ 0 で変化するとき、
-    // 透明度 al を 255 ~ 0 まで変化させる
-    float al = map(
-      life.get(i),
-      1, 0,
-      255, 0
+    float l = life.get(i);
+
+    // 画像に被せる色を設定
+    tint(
+      map(l, 1, 0, 30, 0),
+      map(l, 1, 0, 30, 255),
+      100,
+      map(l, 1, 0, 255, 0)
     );
-    fill(0, 0, 0, al);
 
     // i番目のエージェントを描く
     image(img, x.get(i), y.get(i));
