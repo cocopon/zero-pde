@@ -17,14 +17,6 @@ void mouseDragged() {
     random(1, 10),
     random(1, 10)
   );
-
-  // 繰り返し実行することで描かれる円（飛沫）も増える
-  ellipse(
-    mouseX + random(-10, +10),
-    mouseY + random(-10, +10),
-    random(1, 10),
-    random(1, 10)
-  );
 }
 
 void draw() {
