@@ -1,9 +1,5 @@
 // クリックした場所に汚れたような効果を描く
 
-// 円の中心を変数で宣言しておく
-float ox;
-float oy;
-
 void setup() {
   size(600, 600);
 
@@ -19,9 +15,9 @@ void mousePressed() {
   // ランダムに1000回動きながら円を描き重ねることで、
   // 汚れのような効果が出る
 
-  // 円の中心をカーソル位置で初期化
-  ox = mouseX;
-  oy = mouseY;
+  // 円の中心を変数で宣言、カーソル位置で初期化
+  float ox = mouseX;
+  float oy = mouseY;
 
   // while文で1000回繰り返し
   int i = 0;
