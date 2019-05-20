@@ -16,14 +16,17 @@ void mouseDragged() {
   fill(col);
 
   // カーソル位置を中心にランダムに円を描く
-  // （for文で繰り返して飛沫を増やす）
-  for (int i = 0; i < 5; i++) {
+  // （while文で繰り返して飛沫を増やす）
+  int i = 0;
+  while (i < 5) {
     float sz = random(1, 10);
     ellipse(
       mouseX + random(-10, +10),
       mouseY + random(-10, +10),
       sz, sz
     );
+
+    i = i + 1;
   }
 }
 
