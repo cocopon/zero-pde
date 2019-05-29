@@ -9,14 +9,10 @@ void setup() {
 void draw() {
   background(255);
 
-  // 変数 x を 0 ~ width まで、 100 ずつ増やしながら繰り返す
-  for (int x = 0; x <= width; x += 100) {
+  // 変数 x を 0 ~ 600 まで、 100 ずつ増やしながら繰り返す
+  for (int x = 0; x <= 600; x += 100) {
     // ループ変数を中心座標として円を描く
     // x: 0, 100, 200, …, 600
-    ellipse(
-      x,
-      height / 2,
-      30, 30
-    );
+    ellipse(x, 300, 30, 30);
   }
 }

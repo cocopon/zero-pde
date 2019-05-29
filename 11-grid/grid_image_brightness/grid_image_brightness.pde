@@ -15,10 +15,10 @@ void setup() {
 void draw() {
   background(0);
 
-  // 変数 y を 0 ~ height まで、 20 ずつ増やしながら繰り返す
-  for (int y = 0; y <= height; y += 20) {
-    // 変数 x を 0 ~ width まで、 20 ずつ増やしながら繰り返す
-    for (int x = 0; x <= width; x += 20) {
+  // 変数 y を 0 ~ 600 まで、 20 ずつ増やしながら繰り返す
+  for (int y = 0; y <= 600; y += 20) {
+    // 変数 x を 0 ~ 600 まで、 20 ずつ増やしながら繰り返す
+    for (int x = 0; x <= 600; x += 20) {
       // ループ変数を座標としたときの画像の色を取得
       color col = img.get(x, y);
       // 塗り色に設定
