@@ -25,7 +25,7 @@ void draw() {
   background(255);
 
   // カウントを増やしていく（末尾まで達したら 0 に戻す）
-  count += 1;
+  count = count + 1;
   if (count >= 4) {
     count = 0;
   }
