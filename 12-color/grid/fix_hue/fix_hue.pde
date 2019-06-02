@@ -22,26 +22,6 @@ void setup() {
         ix * 20, iy * 20,
         20, 20
       );
-
-      // 三角形の色も同様に決める
-      float h2 = 200;
-      float s2 = random(0, 100);
-      float b2 = random(0, 100);
-      fill(h2, s2, b2);
-      // ランダムな向きで三角形を描く
-      if (random(0, 100) < 50) {
-        triangle(
-          ix * 20, iy * 20,
-          ix * 20 + 20, iy * 20,
-          ix * 20 + 20, iy * 20 + 20
-        );
-      } else {
-        triangle(
-          ix * 20, iy * 20,
-          ix * 20, iy * 20 + 20,
-          ix * 20 + 20, iy * 20
-        );
-      }
     }
   }
 }

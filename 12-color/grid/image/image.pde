@@ -25,27 +25,6 @@ void setup() {
         ix * 20, iy * 20,
         20, 20
       );
-
-      // 三角形の色も同様に決める
-      c = img.get(
-        (int)random(0, 1136),
-        (int)random(0, 900)
-      );
-      fill(c);
-      // ランダムな向きで三角形を描く
-      if (random(0, 100) < 50) {
-        triangle(
-          ix * 20, iy * 20,
-          ix * 20 + 20, iy * 20,
-          ix * 20 + 20, iy * 20 + 20
-        );
-      } else {
-        triangle(
-          ix * 20, iy * 20,
-          ix * 20, iy * 20 + 20,
-          ix * 20 + 20, iy * 20
-        );
-      }
     }
   }
 }
