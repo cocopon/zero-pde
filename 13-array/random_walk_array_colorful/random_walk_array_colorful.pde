@@ -2,12 +2,12 @@
 // さらに個性を持たせる
 
 // エージェントの位置を覚えておくための変数
-float ballx[];
-float bally[];
+float[] ballx;
+float[] bally;
 // 色（青み）も覚えておく
-float ballb[];
+float[] ballb;
 // サイズも覚えておく
-float ballsz[];
+float[] ballsz;
 
 void setup() {
   size(600, 600);

@@ -2,8 +2,8 @@
 // （配列を使って効率化）
 
 // エージェントの位置を覚えておくための変数
-float ballx[];
-float bally[];
+float[] ballx;
+float[] bally;
 
 void setup() {
   size(600, 600);
