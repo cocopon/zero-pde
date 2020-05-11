@@ -1,13 +1,13 @@
 // 可変長配列でパーティクル（爆発を再現）
 
 // エージェントの位置を覚えておくための配列
-FloatList x;
-FloatList y;
+FloatList xs;
+FloatList ys;
 // 速度用の配列
-FloatList vx;
-FloatList vy;
+FloatList vxs;
+FloatList vys;
 // 寿命の配列
-FloatList life;
+FloatList lifes;
 // 粒子の画像
 PImage img;
 
@@ -23,11 +23,11 @@ void setup() {
   img = loadImage("bokeh.png");
 
   // 可変長配列を初期化
-  x = new FloatList();
-  y = new FloatList();
-  vx = new FloatList();
-  vy = new FloatList();
-  life = new FloatList();
+  xs = new FloatList();
+  ys = new FloatList();
+  vxs = new FloatList();
+  vys = new FloatList();
+  lifes = new FloatList();
 }
 
 void draw() {
@@ -35,21 +35,21 @@ void draw() {
 
   // ループ変数 i を 0 から個数ぶんまで増やしていく
   // ＝すべてのエージェントについて処理する
-  for (int i = 0; i < x.size(); i++) {
-    vx.mult(i, 0.95);
-    vy.mult(i, 0.95);
+  for (int i = 0; i < xs.size(); i++) {
+    vxs.mult(i, 0.95);
+    vys.mult(i, 0.95);
 
     // i番目のエージェントに重力を加える
-    vy.add(i, 0.10);
+    vys.add(i, 0.10);
 
     // i番目のエージェントの位置をずらす
-    x.add(i, vx.get(i));
-    y.add(i, vy.get(i));
+    xs.add(i, vxs.get(i));
+    ys.add(i, vys.get(i));
 
     // i番目のエージェントの寿命を減らす
-    life.sub(i, 0.01);
+    lifes.sub(i, 0.01);
 
-    float l = life.get(i);
+    float l = lifes.get(i);
     
     float s;
     if (l >= 0.5) {
@@ -68,17 +68,17 @@ void draw() {
     );
 
     // i番目のエージェントを描く
-    image(img, x.get(i), y.get(i));
+    image(img, xs.get(i), ys.get(i));
   }
 
   // 不要になった＝寿命の尽きた粒を削除
-  for (int i = x.size() - 1; i >= 0; i--) {
-    if (life.get(i) <= 0) {
-      x.remove(i);
-      y.remove(i);
-      vx.remove(i);
-      vy.remove(i);
-      life.remove(i);
+  for (int i = xs.size() - 1; i >= 0; i--) {
+    if (lifes.get(i) <= 0) {
+      xs.remove(i);
+      ys.remove(i);
+      vxs.remove(i);
+      vys.remove(i);
+      lifes.remove(i);
     }
   }
 }
@@ -86,12 +86,12 @@ void draw() {
 void mousePressed() {
   // 新たなエージェントをたくさん追加
   for (int i = 0; i < 50; i++) {
-    x.append(mouseX);
-    y.append(mouseY);
+    xs.append(mouseX);
+    ys.append(mouseY);
     // 速度もランダムに設定
-    vx.append(random(-20, 20));
-    vy.append(random(-20, 20));
+    vxs.append(random(-20, 20));
+    vys.append(random(-20, 20));
     // 寿命を設定
-    life.append(random(0.9, 1));
+    lifes.append(random(0.9, 1));
   }
 }

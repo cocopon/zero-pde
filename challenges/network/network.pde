@@ -3,19 +3,19 @@
 // 点の数
 int count = 100;
 // 点の位置
-float nx[];
-float ny[];
+float nxs[];
+float nys[];
 
 void setup() {
   size(600, 600);
 
-  nx = new float[count];
-  ny = new float[count];
+  nxs = new float[count];
+  nys = new float[count];
 
   // 点をランダムに配置
   for (int i = 0; i < count; i++) {
-    nx[i] = random(-100, width + 100);
-    ny[i] = random(-100, height + 100);
+    nxs[i] = random(-100, width + 100);
+    nys[i] = random(-100, height + 100);
   }
 }
 
@@ -31,14 +31,14 @@ void draw() {
     for (int i = j + 1; i < count; i++) {
       // 点間の距離を計算し、ある程度遠いものは描かない
       float d = dist(
-        nx[j], ny[j],
-        nx[i], ny[i]
+        nxs[j], nys[j],
+        nxs[i], nys[i]
       );
 
       if (d < 100) {
         line(
-          nx[j], ny[j],
-          nx[i], ny[i]
+          nxs[j], nys[j],
+          nxs[i], nys[i]
         );
       }
     }
@@ -48,6 +48,6 @@ void draw() {
   fill(255);
   noStroke();
   for (int i = 0; i < count; i++) {
-    ellipse(nx[i], ny[i], 8, 8);
+    ellipse(nxs[i], nys[i], 8, 8);
   }
 }

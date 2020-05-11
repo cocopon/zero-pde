@@ -1,10 +1,10 @@
 // 可変長配列でパーティクル（重力あり）
 
 // 粒子の情報を覚えておくための配列
-FloatList x;
-FloatList y;
-FloatList vx;
-FloatList vy;
+FloatList xs;
+FloatList ys;
+FloatList vxs;
+FloatList vys;
 
 void setup() {
   size(600, 600);
@@ -12,32 +12,32 @@ void setup() {
   fill(255);
 
   // 可変長配列を初期化
-  x = new FloatList();
-  y = new FloatList();
-  vx = new FloatList();
-  vy = new FloatList();
+  xs = new FloatList();
+  ys = new FloatList();
+  vxs = new FloatList();
+  vys = new FloatList();
 }
 
 void draw() {
   background(0);
 
   // 新たな粒子を追加
-  x.append(300);
-  y.append(300);
-  vx.append(random(-5, 5));
-  vy.append(random(-5, 5));
+  xs.append(300);
+  ys.append(300);
+  vxs.append(random(-5, 5));
+  vys.append(random(-5, 5));
 
   // ループ変数 i を 0 から個数ぶんまで増やしていく
   // ＝すべての粒子について処理する
-  for (int i = 0; i < x.size(); i++) {
+  for (int i = 0; i < xs.size(); i++) {
     // i番目の粒子の位置をずらす
-    x.add(i, vx.get(i));
-    y.add(i, vy.get(i));
+    xs.add(i, vxs.get(i));
+    ys.add(i, vys.get(i));
     
-    // Y方向の速度に重力をかける
-    vy.add(i, 0.1);
+    // ys方向の速度に重力をかける
+    vys.add(i, 0.1);
 
     // i番目の粒子を描く
-    ellipse(x.get(i), y.get(i), 10, 10);
+    ellipse(xs.get(i), ys.get(i), 10, 10);
   }
 }
