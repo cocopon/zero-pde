@@ -1,12 +1,12 @@
 // ランダムに歩き回るエージェントが2体
 
 // エージェント1の位置を覚えておくための変数
-float ballx1;
-float bally1;
+float ballX1;
+float ballY1;
 
 // エージェント2の位置を覚えておくための変数
-float ballx2;
-float bally2;
+float ballX2;
+float ballY2;
 
 void setup() {
   size(600, 600);
@@ -14,28 +14,28 @@ void setup() {
   fill(0, 0, 0);
 
   // エージェント1の変数の初期値（開始時の位置）をキャンバス中央に設定
-  ballx1 = width / 2;
-  bally1 = height / 2;
+  ballX1 = width / 2;
+  ballY1 = height / 2;
 
   // エージェント1の変数の初期値（開始時の位置）をキャンバス中央に設定
-  ballx2 = width / 2;
-  bally2 = height / 2;
+  ballX2 = width / 2;
+  ballY2 = height / 2;
 }
 
 void draw() {
   background(255, 255, 255);
 
   // エージェント1の位置をランダムにずらす
-  ballx1 += random(-10, 10);
-  bally1 += random(-10, 10);
+  ballX1 += random(-10, 10);
+  ballY1 += random(-10, 10);
 
   // エージェント2の位置もランダムにずらす
-  ballx2 += random(-10, 10);
-  bally2 += random(-10, 10);
+  ballX2 += random(-10, 10);
+  ballY2 += random(-10, 10);
 
   // エージェント1を描く
-  ellipse(ballx1, bally1, 30, 30);
+  ellipse(ballX1, ballY1, 30, 30);
 
   // エージェント2を描く
-  ellipse(ballx2, bally2, 30, 30);
+  ellipse(ballX2, ballY2, 30, 30);
 }
